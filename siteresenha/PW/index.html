@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TigasQuiz</title>
+  <style>
+    img {
+  width: 100%;
+  max-width: 400px;
+  height: 500px;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto;
+}
+   
+    body { font-family: Arial, sans-serif; padding: 20px; max-width: 600px; margin: auto; }
+    .pergunta { margin-bottom: 20px; }
+    button { margin: 5px 5px 0 0; }
+    img { max-width: 100%; margin-top: 20px; }
+    #resultado { display: none; }
+  </style>
+</head>
+<body>
+  
+  <h1>TigasQuiz: QUAL TIAGO VOCÊ SERIA?</h1>
+  
+  <form id="quiz-form">
+
+    <div class="pergunta 4">
+        
+      <p>1. Atualmente qual a melhor musica?</p>
+
+      <img src="https://www.seligaalagoinhas.com.br/images/noticias/56710/8bb347131ea96291f526f9a89a651663.webp" alt="">
+      <p></p>
+      <label><input type="radio" name="q4" data-valor = "5" > Resenha do arrocha</label><br>
+      <label><input type="radio" name="q4" data-valor = "10" > Mãe solteira</label><br>
+      <label><input type="radio" name="q4" data-valor = "15" > Calma calabreso</label><br>
+      <label><input type="radio" name="q4" data-valor = "20"  > Ex-Love</label><br>
+    </div>
+
+    <audio id="musicaEscolhida" autoplay style="display: none;"></audio>
+
+    <div class="pergunta 1">
+        
+      <p>2. Oque você faria nessa situação?</p>
+
+      <img src="https://img.freepik.com/fotos-premium/um-homem-tirando-selfie-com-um-leao-o-homem-esta-correndo-leao-perseguindo-o-homem-animais-selvagens_443830-6283.jpg" alt="">
+
+      <label><input type="radio" name="q1" data-valor = "5" > Deitava o leão na porrada</label><br>
+      <label><input type="radio" name="q1" data-valor = "10" > Gritava e corria</label><br>
+      <label><input type="radio" name="q1" data-valor = "15" > Não há nada a ser fazido</label><br>
+      <label><input type="radio" name="q1" data-valor = "20"  > Tiraria uma selfie igual essa anta aí na imagem</label><br>
+    </div>
+
+    <div class="pergunta 2">
+        
+      <p>3. Oque você faria se encontrasse essa pessoa na rua?</p>
+
+      <img src="https://static1.purepeople.com.br/people/5/55/51/25/@/4474758-davi-bbb-24-560x315-1.jpg" alt="">
+      <p></p>
+      <label><input type="radio" name="q2" data-valor = "5" > Pedia uma self</label><br>
+      <label><input type="radio" name="q2" data-valor = "10" > Gritava e corria</label><br>
+      <label><input type="radio" name="q2" data-valor = "15" > Chorava de emoção</label><br>
+      <label><input type="radio" name="q2" data-valor = "20"  > Pedia para dançar com ele</label><br>
+    </div>
+
+    <div class="pergunta 3">
+        
+      <p>4. Qual animal você seria?</p>
+
+      <img src="https://s2.glbimg.com/H85JCqFCwZeacQuOFifAtNjF4rtNPoc5_ExIGPbW7M9Ioz-HdGixxa_8qOZvMp3w/s.glbimg.com/jo/g1/f/original/2012/08/28/perereca_1.jpg" alt="">
+      <p></p>
+      <label><input type="radio" name="q3" data-valor = "5" > Perereca de Vidro (opção correta)</label><br>
+      <label><input type="radio" name="q3" data-valor = "10" > Dendrobates (rã venenosa)</label><br>
+      <label><input type="radio" name="q3" data-valor = "15" > Mutum</label><br>
+      <label><input type="radio" name="q3" data-valor = "20"  > Aranha-golias-comedora-de-homens</label><br>
+    </div>
+    
+
+    <div class="pergunta 5">
+        
+      <p>5. Oque você faria nessa situação?</p>
+
+      <img src="danilo7desetembro.jpg" alt="">
+      <p></p>
+      <label><input type="radio" name="q5" data-valor = "5" > Denunciaria para a Leticia</label><br>
+      <label><input type="radio" name="q5" data-valor = "10" > Gritava e corria</label><br>
+      <label><input type="radio" name="q5" data-valor = "15" > Mandaria ele parar porque não é dia de maldade</label><br>
+      <label><input type="radio" name="q5" data-valor = "20"  > Fazia um pão com requeijão</label><br>
+    </div>
+
+    <div class="pergunta 6">
+        
+      <p>6. Qual esporte você prefere?</p>
+
+      <img src="https://blog.aventurando.com.br/wp-content/uploads/2018/04/chess-boxe-1024x683.jpg" alt="">
+      <p></p>
+      <label><input type="radio" name="q6" data-valor = "5" > Bossaball</label><br>
+      <label><input type="radio" name="q6" data-valor = "10" > Goanna Pulling</label><br>
+      <label><input type="radio" name="q6" data-valor = "15" > Quadribol</label><br>
+      <label><input type="radio" name="q6" data-valor = "20"  > Xadrez-Boxe</label><br>
+    </div>
+   
+
+    <button type="button" onclick="mostrarResultado()">Ver Resultado</button>
+
+  </form>
+
+  <div id="resultado">
+    
+    <h2>Resultado</h2>
+    
+    <p id="texto-resultado"></p>
+    <img id="imagem-resultado" src="" alt="Imagem do resultado">
+    <button onclick="mostrarParabens()">Continuar</button>
+  
+  </div>
+  
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  <script>
+       const musicaEscolhida = document.getElementById("musicaEscolhida");
+
+document.querySelectorAll('input[name="q4"]').forEach(radio => {
+  radio.addEventListener('change', function() {
+    let musicaSrc = "";
+
+    const texto = this.parentElement.textContent.trim();
+
+   
+    if (texto.includes("Resenha do arrocha")) {
+      musicaSrc = "RESENHA DO ARROCHA - J. ESKINE (CLIPE OFICIAL).mp3";
+    } else if (texto.includes("Mãe solteira")) {
+      musicaSrc = "MÃE SOLTEIRA - J.Eskine, MC Davi, MC G15, DG e Batidão Stronda (GR6 Explode).mp3"; 
+    } else if (texto.includes("Calma calabreso")) {
+      musicaSrc = "Calma Calabreso.mp3";
+    } else if (texto.includes("Ex-Love")) {
+      musicaSrc = "J. ESKINE - RESENHA DE EX-LOVE  O QUE BATE É MALUQUICE.mp3";
+    }
+
+    musicaEscolhida.src = musicaSrc;
+    musicaEscolhida.play();
+  });
+});
+    function mostrarParabens() {
+
+      document.body.innerHTML= `
+      <div style ="height: 100vh; display: flex; justify-content: center; align-items: center; text-align: center;">
+        <h1 class = "niver"> FELIZ ANIVERSÁRIO TIAGO!!! </h1>
+        <audio id="musicaParabens" autoplay>
+        <source src="Parabéns pra Você.mp3" type="audio/mpeg">
+        Seu navegador não suporta áudio HTML5.
+      </audio>
+      
+      </div>
+      `;
+      const intervalo = setInterval(() => {
+    confetti({
+      particleCount: 80,
+      spread: 100,
+      origin: { y: Math.random(), x: Math.random() },
+    });
+  }, 300);
+
+
+  setTimeout(() => {
+    clearInterval(intervalo);
+  }, 10000);
+
+}
+
+    function mostrarResultado() {
+    const respostas = document.querySelectorAll('input[type=radio]:checked');
+    let totalPontos = 0;
+      
+    respostas.forEach(resposta => {
+      totalPontos += parseInt(resposta.dataset.valor);
+    }); 
+
+    let resultadoTexto = '';
+    let imagemSrc = '';
+  
+    if (totalPontos <= 30) 
+    {
+      resultadoTexto ='Você é o Tiago 244.';
+      imagemSrc = 'tigas244.jpg'
+      
+    } 
+    else if (totalPontos >= 31 && totalPontos<= 60 )  
+    {
+      resultadoTexto = 'Você é o Tiago drag queen';
+      imagemSrc = 'tigasmulher.jpg';
+    } 
+    else if (totalPontos >= 61 && totalPontos <= 90 )  
+    {
+      resultadoTexto = 'Você é o Tiago noia';
+      imagemSrc = 'tiagonoia.jpg';
+    }
+    else
+    {
+      resultadoTexto = 'Você é o tiago tiago'
+      imagemSrc = "tigastiago.png"
+    }
+  
+    
+    document.getElementById('quiz-form').style.display = 'none';
+    document.getElementById('resultado').style.display = 'block';
+    document.getElementById('texto-resultado').textContent = resultadoTexto;
+    document.getElementById('imagem-resultado').src = imagemSrc;
+}
+  </script>
+  
+</body>
+</html>
